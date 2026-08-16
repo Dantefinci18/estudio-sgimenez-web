@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estudio Jurídico Martínez &amp; Villanueva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary:      #1a2332;
+      --primary-dark: #0d1520;
+      --accent:       #c9a84c;
+      --accent-light: #e8d5a3;
+      --light:        #f8f5ef;
+      --text:         #2c3e50;
+      --text-muted:   #6c757d;
+      --white:        #ffffff;
+      --border:       #e0d9cc;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(13, 21, 32, 0.96);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      height: 70px;
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-emblem {
+      width: 38px;
+      height: 38px;
+      background: var(--accent);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+
+    .nav-logo-name {
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .nav-logo-name small {
+      display: block;
+      color: var(--accent);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-links .btn-cta {
+      background: var(--accent);
+      color: var(--primary) !important;
+      padding: 0.55rem 1.3rem;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: background 0.25s, transform 0.2s !important;
+    }
+
+    .nav-links .btn-cta:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+
+    /* ─── INICIO / HERO ─── */
+    #inicio {
+      min-height: 100vh;
+      background: linear-gradient(150deg, var(--primary-dark) 0%, var(--primary) 55%, #243347 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #inicio::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(201,168,76,0.09) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 25%, rgba(201,168,76,0.06) 0%, transparent 50%);
+    }
+
+    .hero-ring {
+      position: absolute;
+      border: 1px solid rgba(201,168,76,0.06);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-ring:nth-child(1) { width: 380px; height: 380px; border-color: rgba(201,168,76,0.08); }
+    .hero-ring:nth-child(2) { width: 620px; height: 620px; }
+    .hero-ring:nth-child(3) { width: 860px; height: 860px; border-color: rgba(201,168,76,0.03); }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,168,76,0.13);
+      border: 1px solid rgba(201,168,76,0.45);
+      color: var(--accent);
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title .highlight { color: var(--accent); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 540px;
+      margin: 0 auto 2.75rem;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .btn-reservar {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: var(--accent);
+      color: var(--primary);
+      border: none;
+      padding: 1rem 2.75rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: 'Lato', sans-serif;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
+      box-shadow: 0 6px 24px rgba(201,168,76,0.45);
+    }
+
+    .btn-reservar:hover {
+      background: var(--accent-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 36px rgba(201,168,76,0.55);
+    }
+
+    .btn-reservar svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3.5rem;
+      margin-top: 4.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0.25rem;
+    }
+
+    /* ─── SECCIÓN COMÚN ─── */
+    section { padding: 6rem 2rem; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-tag {
+      display: block;
+      color: var(--accent);
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .section-rule {
+      width: 52px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 1rem auto 1.5rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    /* ─── CAUSAS ─── */
+    #causas { background: var(--light); }
+
+    .causas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .causa-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem 1.75rem;
+      border-top: 3px solid transparent;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.05);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    .causa-card:hover {
+      border-top-color: var(--accent);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.11);
+    }
+
+    .causa-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--primary), #2c4a70);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .causa-icon svg {
+      width: 26px;
+      height: 26px;
+      color: var(--accent);
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .causa-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.65rem;
+    }
+
+    .causa-desc {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      line-height: 1.75;
+    }
+
+    /* ─── ESTUDIO ─── */
+    #estudio { background: var(--white); }
+
+    .estudio-wrap { max-width: 1200px; margin: 0 auto; }
+
+    .foto-wrapper {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+
+    .foto-equipo {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .foto-fallback {
+      display: none;
+      width: 100%;
+      height: 460px;
+      background: linear-gradient(135deg, var(--primary), #2c4a70);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .foto-fallback span:first-child {
+      font-size: 5rem;
+      opacity: 0.4;
+      color: var(--accent);
+    }
+
+    .foto-fallback span:last-child {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .foto-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 45%;
+      background: linear-gradient(to top, rgba(13,21,32,0.72), transparent);
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem 2rem;
+    }
+
+    .foto-caption {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.88rem;
+      font-style: italic;
+    }
+
+    .historia-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .historia-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .historia-text p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.85;
+      font-size: 0.97rem;
+    }
+
+    .valores-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .valor {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .valor-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+
+    .valor-body h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .valor-body p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2.25rem 2rem;
+      font-size: 0.88rem;
+      line-height: 2;
+    }
+
+    footer strong { color: var(--accent); }
+
+    /* ─── MODAL ─── */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.78);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .overlay.open { display: flex; }
+
+    .modal {
+      background: var(--white);
+      border-radius: 14px;
+      width: 100%;
+      max-width: 500px;
+      max-height: 92vh;
+      overflow-y: auto;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+    }
+
+    .modal-head {
+      background: var(--primary);
+      padding: 1.4rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 14px 14px 0 0;
+      position: sticky;
+      top: 0;
+    }
+
+    .modal-head-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .modal-x {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.65);
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: color 0.2s;
+      padding: 0.2rem;
+    }
+
+    .modal-x:hover { color: var(--accent); }
+
+    .modal-body { padding: 1.75rem; }
+
+    /* Calendar nav */
+    .cal-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+
+    .cal-month-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: capitalize;
+    }
+
+    .cal-arrow {
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .cal-arrow:hover {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 3px;
+    }
+
+    .cal-wday {
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 0.4rem 0;
+    }
+
+    .cal-cell {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 7px;
+      font-size: 0.87rem;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      transition: background 0.18s, color 0.18s, transform 0.18s, border-color 0.18s;
+    }
+
+    .cal-cell.dim    { opacity: 0.22; }
+    .cal-cell.past   { opacity: 0.28; }
+
+    .cal-cell.free {
+      background: rgba(201,168,76,0.1);
+      border-color: rgba(201,168,76,0.35);
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .cal-cell.free:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--primary);
+      transform: scale(1.07);
+    }
+
+    .cal-cell.selected {
+      background: var(--primary) !important;
+      border-color: var(--primary) !important;
+      color: var(--white) !important;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .cal-cell.today-ring { border-color: var(--accent) !important; }
+
+    .cal-legend {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .legend-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 3px;
+      background: rgba(201,168,76,0.38);
+      border: 1px solid rgba(201,168,76,0.6);
+    }
+
+    /* Time slots */
+    .slots-section {
+      margin-top: 1.4rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .slots-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.85rem;
+    }
+
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.45rem;
+    }
+
+    .slot {
+      padding: 0.5rem 0.25rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.83rem;
+      cursor: pointer;
+      color: var(--text);
+      transition: background 0.18s, border-color 0.18s, color 0.18s;
+    }
+
+    .slot:hover:not(.slot-taken) {
+      border-color: var(--accent);
+      background: rgba(201,168,76,0.1);
+    }
+
+    .slot.slot-sel {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .slot.slot-taken {
+      opacity: 0.32;
+      cursor: not-allowed;
+      text-decoration: line-through;
+    }
+
+    /* Form */
+    .booking-form {
+      margin-top: 1.4rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .fgroup { margin-bottom: 0.9rem; }
+
+    .fgroup label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .fgroup input,
+    .fgroup select {
+      width: 100%;
+      padding: 0.62rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.93rem;
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+
+    .fgroup input:focus,
+    .fgroup select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .btn-confirm {
+      width: 100%;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 0.85rem;
+      font-size: 0.93rem;
+      font-weight: 700;
+      font-family: 'Lato', sans-serif;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.25s;
+    }
+
+    .btn-confirm:hover { background: var(--accent); color: var(--primary); }
+
+    /* Success screen */
+    .success-screen {
+      text-align: center;
+      padding: 1.5rem 0.5rem 0.5rem;
+    }
+
+    .success-check {
+      width: 68px;
+      height: 68px;
+      background: rgba(201,168,76,0.12);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.25rem;
+      color: var(--accent);
+    }
+
+    .success-screen h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+    }
+
+    .success-screen > p {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .booking-summary {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 1rem 1.4rem;
+      text-align: left;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 2.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .booking-summary strong { color: var(--primary); }
+
+    .success-screen .btn-confirm { margin-top: 0; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+
+      .hero-stats { gap: 2rem; }
+      .stat-number { font-size: 2rem; }
+
+      section { padding: 4rem 1.5rem; }
+
+      .historia-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .foto-equipo, .foto-fallback { height: 260px; }
+
+      .slots-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════ -->
+<nav>
+  <a href="#inicio" class="nav-logo">
+    <div class="nav-logo-emblem">⚖</div>
+    <div class="nav-logo-name">
+      Martínez &amp; Villanueva
+      <small>Abogados &amp; Asociados</small>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#causas">Áreas de Práctica</a></li>
+    <li><a href="#estudio">El Estudio</a></li>
+    <li><a href="#" class="btn-cta" onclick="abrirModal(); return false;">Reservar Turno</a></li>
+  </ul>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     INICIO — HERO
+════════════════════════════════════════ -->
+<section id="inicio">
+  <div class="hero-ring"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-ring"></div>
+
+  <div class="hero-content">
+    <span class="hero-badge">Estudio Jurídico de Excelencia</span>
+
+    <h1 class="hero-title">
+      Defendemos sus<br>
+      <span class="highlight">Derechos</span> con<br>
+      Integridad
+    </h1>
+
+    <p class="hero-sub">
+      Brindamos asesoramiento legal de alta calidad con más de 20&nbsp;años de experiencia.
+      Su caso en manos de los mejores profesionales.
+    </p>
+
+    <button class="btn-reservar" onclick="abrirModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      Reservar Turno
+    </button>
+
+    <div class="hero-stats">
+      <div>
+        <div class="stat-number">+20</div>
+        <div class="stat-label">Años de experiencia</div>
+      </div>
+      <div>
+        <div class="stat-number">+500</div>
+        <div class="stat-label">Casos resueltos</div>
+      </div>
+      <div>
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Satisfacción</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CAUSAS — ÁREAS DE PRÁCTICA
+════════════════════════════════════════ -->
+<section id="causas">
+  <div class="section-header">
+    <span class="section-tag">Especialidades</span>
+    <h2 class="section-title">Áreas de Práctica</h2>
+    <div class="section-rule"></div>
+    <p class="section-desc">
+      Contamos con profesionales especializados en distintas ramas del derecho
+      para brindarle la mejor representación.
+    </p>
+  </div>
+
+  <div class="causas-grid">
+
+    <div class="causa-card">
+      <div class="causa-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3 class="causa-title">Derecho Civil</h3>
+      <p class="causa-desc">
+        Asesoramiento y representación en contratos, obligaciones, daños y perjuicios,
+        sucesiones y todo tipo de conflictos entre particulares o frente a entidades.
+      </p>
+    </div>
+
+    <div class="causa-card">
+      <div class="causa-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <h3 class="causa-title">Derecho Laboral</h3>
+      <p class="causa-desc">
+        Defensa de trabajadores y empleadores en despidos, accidentes laborales,
+        discriminación, convenios colectivos, negociaciones sindicales y más.
+      </p>
+    </div>
+
+    <div class="causa-card">
+      <div class="causa-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <h3 class="causa-title">Derecho Penal</h3>
+      <p class="causa-desc">
+        Representación en procesos penales tanto en la defensa del imputado como en la
+        asistencia a la víctima. Delitos comunes, económicos y de alta complejidad.
+      </p>
+    </div>
+
+    <div class="causa-card">
+      <div class="causa-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      <h3 class="causa-title">Derecho de Familia</h3>
+      <p class="causa-desc">
+        Divorcios, alimentos, régimen de visitas, adopciones, violencia familiar y todo
+        lo relacionado con vínculos, filiaciones y relaciones conyugales.
+      </p>
+    </div>
+
+    <div class="causa-card">
+      <div class="causa-icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+        </svg>
+      </div>
+      <h3 class="causa-title">Derecho Comercial</h3>
+      <p class="causa-desc">
+        Constitución de sociedades, contratos comerciales, concursos y quiebras,
+        fusiones, adquisiciones y resolución de conflictos societarios.
+      </p>
+    </div>
+
+    <div class="causa-card">
+      <div class="causa-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </div>
+      <h3 class="causa-title">Derecho Inmobiliario</h3>
+      <p class="causa-desc">
+        Compraventa de propiedades, locaciones, desalojos, propiedad horizontal,
+        usucapión y todo conflicto vinculado a bienes inmuebles.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     ESTUDIO — SOBRE NOSOTROS
+════════════════════════════════════════ -->
+<section id="estudio">
+  <div class="section-header">
+    <span class="section-tag">Nosotros</span>
+    <h2 class="section-title">El Estudio</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="estudio-wrap">
+
+    <!-- Foto del equipo -->
+    <div class="foto-wrapper">
+      <img
+        src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&auto=format&fit=crop&q=80"
+        alt="Equipo del Estudio Jurídico Martínez &amp; Villanueva"
+        class="foto-equipo"
+        onerror="this.style.display='none'; document.getElementById('foto-fallback').style.display='flex';"
+      />
+      <div id="foto-fallback" class="foto-fallback">
+        <span>⚖</span>
+        <span>Foto del Equipo</span>
+      </div>
+      <div class="foto-overlay">
+        <p class="foto-caption">
+          Equipo del Estudio Jurídico Martínez &amp; Villanueva &mdash; Buenos Aires, Argentina
+        </p>
+      </div>
+    </div>
+
+    <!-- Historia y valores -->
+    <div class="historia-grid">
+      <div class="historia-text">
+        <h3>Nuestra Historia</h3>
+        <p>
+          El Estudio Jurídico fue fundado en el año 2004 por el Dr. Alejandro Martínez y la
+          Dra. Carmen Villanueva, con la convicción de que todo ciudadano merece acceso a una
+          defensa legal de calidad, sin importar la complejidad de su situación.
+        </p>
+        <p>
+          Desde nuestros humildes comienzos con una pequeña oficina en el centro de Buenos Aires,
+          crecimos hasta convertirnos en un estudio de referencia con un equipo de doce
+          profesionales especializados en distintas ramas del derecho argentino e internacional.
+        </p>
+        <p>
+          A lo largo de más de dos décadas hemos acompañado a cientos de familias y empresas
+          en sus momentos más difíciles, siempre guiados por el compromiso con la justicia,
+          la ética profesional y el trato humano como pilares fundamentales de nuestra práctica.
+        </p>
+      </div>
+
+      <div class="valores-list">
+        <div class="valor">
+          <div class="valor-icon">⚖</div>
+          <div class="valor-body">
+            <h4>Compromiso con la Justicia</h4>
+            <p>Cada caso recibe la misma dedicación y rigor, sin importar su envergadura. Siempre buscamos el mejor resultado posible para nuestros clientes.</p>
+          </div>
+        </div>
+        <div class="valor">
+          <div class="valor-icon">🤝</div>
+          <div class="valor-body">
+            <h4>Confianza y Transparencia</h4>
+            <p>Mantenemos una comunicación clara y honesta, informando en todo momento sobre el estado y las perspectivas reales de cada caso.</p>
+          </div>
+        </div>
+        <div class="valor">
+          <div class="valor-icon">📚</div>
+          <div class="valor-body">
+            <h4>Excelencia Profesional</h4>
+            <p>Nuestro equipo se actualiza de forma permanente ante los cambios legislativos y jurisprudenciales para ofrecer siempre la estrategia legal más sólida.</p>
+          </div>
+        </div>
+        <div class="valor">
+          <div class="valor-icon">❤</div>
+          <div class="valor-body">
+            <h4>Trato Humano</h4>
+            <p>Sabemos que detrás de cada expediente hay personas. Por eso brindamos un trato cálido, cercano y empático en cada consulta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <p>© 2024 <strong>Estudio Jurídico Martínez &amp; Villanueva</strong>. Todos los derechos reservados.</p>
+  <p>contacto@estudiojuridico.com.ar</p>
+</footer>
+
+
+<!-- ═══════════════════════════════════════
+     MODAL — RESERVA DE TURNO
+════════════════════════════════════════ -->
+<div class="overlay" id="overlay" onclick="cerrarEnOverlay(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-head">
+      <span class="modal-head-title">📅 Reservar Turno</span>
+      <button class="modal-x" onclick="cerrarModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+
+<script>
+/* ─────────────────────────────────────
+   ESTADO
+───────────────────────────────────── */
+const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+               'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const DIAS  = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+
+let mesVista  = new Date().getMonth();
+let anoVista  = new Date().getFullYear();
+let diaSelec  = null;   // "año-mes-dia"
+let horaSelec = null;   // "HH:MM"
+
+/* Genera los días disponibles: días hábiles en los próximos 45 días, sin algunos */
+function calcularDisponibles() {
+  const set = new Set();
+  const hoy = new Date(); hoy.setHours(0,0,0,0);
+  for (let i = 1; i <= 45; i++) {
+    const d = new Date(hoy); d.setDate(hoy.getDate() + i);
+    if (d.getDay() === 0 || d.getDay() === 6) continue;
+    if (((d.getDate() * 3 + d.getMonth() * 7) % 5) === 0) continue;
+    set.add(`${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`);
+  }
+  return set;
+}
+
+const disponibles = calcularDisponibles();
+
+/* Horarios del día — algunos marcados como ocupados */
+function horariosDia(clave) {
+  const todos = ['09:00','09:30','10:00','10:30','11:00','11:30',
+                 '14:00','14:30','15:00','15:30','16:00','16:30'];
+  const d = parseInt(clave.split('-')[2]);
+  return todos.map((h, i) => ({ hora: h, ocupado: ((d + i * 2) % 7) === 0 }));
+}
+
+/* ─────────────────────────────────────
+   RENDER CALENDARIO
+───────────────────────────────────── */
+function renderCalendario() {
+  const hoy     = new Date(); hoy.setHours(0,0,0,0);
+  const primero = new Date(anoVista, mesVista, 1).getDay();
+  const ultimo  = new Date(anoVista, mesVista + 1, 0).getDate();
+  const prevUlt = new Date(anoVista, mesVista, 0).getDate();
+
+  let h = `
+    <div class="cal-nav">
+      <button class="cal-arrow" onclick="cambiarMes(-1)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <span class="cal-month-label">${MESES[mesVista]} ${anoVista}</span>
+      <button class="cal-arrow" onclick="cambiarMes(1)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cal-grid">
+  `;
+
+  DIAS.forEach(d => { h += `<div class="cal-wday">${d}</div>`; });
+
+  /* Días del mes anterior */
+  for (let i = primero - 1; i >= 0; i--) {
+    h += `<div class="cal-cell dim">${prevUlt - i}</div>`;
+  }
+
+  /* Días del mes actual */
+  for (let d = 1; d <= ultimo; d++) {
+    const fecha   = new Date(anoVista, mesVista, d);
+    const clave   = `${anoVista}-${mesVista}-${d}`;
+    const esPasado   = fecha <= hoy;
+    const esDisp     = disponibles.has(clave);
+    const esHoy      = fecha.getTime() === hoy.getTime();
+    const esSel      = diaSelec === clave;
+
+    let cls = 'cal-cell';
+    if (esSel)          cls += ' selected';
+    else if (esPasado)  cls += ' past';
+    else if (esDisp)    cls += ' free';
+
+    if (esHoy && !esSel) cls += ' today-ring';
+
+    const click = esDisp && !esPasado
+      ? `onclick="seleccionarDia(${anoVista},${mesVista},${d})"`
+      : '';
+
+    h += `<div class="${cls}" ${click}>${d}</div>`;
+  }
+
+  /* Relleno del siguiente mes */
+  const total     = primero + ultimo;
+  const relleno   = total % 7 === 0 ? 0 : 7 - (total % 7);
+  for (let d = 1; d <= relleno; d++) {
+    h += `<div class="cal-cell dim">${d}</div>`;
+  }
+
+  h += `</div>
+    <div class="cal-legend">
+      <div class="legend-dot"></div>
+      <span>Turnos disponibles</span>
+    </div>
+  `;
+
+  /* Franja horaria */
+  if (diaSelec) {
+    const [a, m, d] = diaSelec.split('-');
+    const label = `${d} de ${MESES[parseInt(m)]}`;
+    const slots = horariosDia(diaSelec);
+    h += `
+      <div class="slots-section">
+        <div class="slots-label">Horarios disponibles — ${label}</div>
+        <div class="slots-grid">
+    `;
+    slots.forEach(s => {
+      let cls = 'slot';
+      if (s.ocupado)             cls += ' slot-taken';
+      else if (horaSelec === s.hora) cls += ' slot-sel';
+      const click = !s.ocupado ? `onclick="seleccionarHora('${s.hora}')"` : '';
+      h += `<div class="${cls}" ${click}>${s.hora}</div>`;
+    });
+    h += `</div></div>`;
+  }
+
+  /* Formulario */
+  if (horaSelec) {
+    h += `
+      <div class="booking-form">
+        <div class="slots-label" style="margin-bottom:.9rem">Confirmar datos</div>
+        <div class="fgroup">
+          <label>Nombre completo *</label>
+          <input type="text" id="fNombre" placeholder="Ej: Juan García" autocomplete="name" />
+        </div>
+        <div class="fgroup">
+          <label>Correo electrónico *</label>
+          <input type="email" id="fEmail" placeholder="correo@ejemplo.com" autocomplete="email" />
+        </div>
+        <div class="fgroup">
+          <label>Teléfono</label>
+          <input type="tel" id="fTel" placeholder="(011) 1234-5678" autocomplete="tel" />
+        </div>
+        <div class="fgroup">
+          <label>Motivo de consulta</label>
+          <select id="fMotivo">
+            <option value="">— Seleccione un área —</option>
+            <option>Derecho Civil</option>
+            <option>Derecho Laboral</option>
+            <option>Derecho Penal</option>
+            <option>Derecho de Familia</option>
+            <option>Derecho Comercial</option>
+            <option>Derecho Inmobiliario</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <button class="btn-confirm" onclick="confirmarTurno()">Confirmar Reserva</button>
+      </div>
+    `;
+  }
+
+  document.getElementById('modalBody').innerHTML = h;
+}
+
+/* ─────────────────────────────────────
+   PANTALLA DE ÉXITO
+───────────────────────────────────── */
+function renderExito() {
+  const [a, m, d] = diaSelec.split('-');
+  const fecha   = `${d} de ${MESES[parseInt(m)]} de ${a}`;
+  const nombre  = esc(document.getElementById('fNombre')?.value || 'Cliente');
+  const motivo  = esc(document.getElementById('fMotivo')?.value || 'Consulta general');
+
+  document.getElementById('modalBody').innerHTML = `
+    <div class="success-screen">
+      <div class="success-check">✓</div>
+      <h3>¡Turno Confirmado!</h3>
+      <p>Le hemos enviado una confirmación a su correo electrónico.</p>
+      <div class="booking-summary">
+        <strong>Nombre:</strong> ${nombre}<br>
+        <strong>Fecha:</strong> ${fecha}<br>
+        <strong>Horario:</strong> ${horaSelec} hs<br>
+        <strong>Motivo:</strong> ${motivo}
+      </div>
+      <p style="color:var(--text-muted);font-size:.83rem;margin-bottom:1.5rem">
+        Ante cualquier consulta llámenos al (011) 4321-5678
+      </p>
+      <button class="btn-confirm" onclick="cerrarModal()">Cerrar</button>
+    </div>
+  `;
+}
+
+/* Escapa texto para inserción en HTML */
+function esc(str) {
+  return String(str)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ─────────────────────────────────────
+   INTERACCIONES DEL CALENDARIO
+───────────────────────────────────── */
+function cambiarMes(delta) {
+  mesVista += delta;
+  if (mesVista > 11) { mesVista = 0; anoVista++; }
+  if (mesVista <  0) { mesVista = 11; anoVista--; }
+  /* Limpia selección si el día no está en el nuevo mes */
+  if (diaSelec) {
+    const [sa, sm] = diaSelec.split('-');
+    if (parseInt(sa) !== anoVista || parseInt(sm) !== mesVista) {
+      diaSelec = null; horaSelec = null;
+    }
+  }
+  renderCalendario();
+}
+
+function seleccionarDia(a, m, d) {
+  const clave = `${a}-${m}-${d}`;
+  if (diaSelec === clave) { diaSelec = null; horaSelec = null; }
+  else                    { diaSelec = clave; horaSelec = null; }
+  renderCalendario();
+  /* Desplaza a los horarios */
+  setTimeout(() => {
+    document.querySelector('.slots-section')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 60);
+}
+
+function seleccionarHora(h) {
+  horaSelec = horaSelec === h ? null : h;
+  renderCalendario();
+  setTimeout(() => {
+    document.querySelector('.booking-form')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 60);
+}
+
+function confirmarTurno() {
+  const nombre = document.getElementById('fNombre')?.value.trim();
+  const email  = document.getElementById('fEmail')?.value.trim();
+  if (!nombre || !email) {
+    alert('Por favor complete su nombre y correo electrónico.');
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert('Por favor ingrese un correo electrónico válido.');
+    return;
+  }
+  renderExito();
+}
+
+/* ─────────────────────────────────────
+   MODAL
+───────────────────────────────────── */
+function abrirModal() {
+  const ahora  = new Date();
+  mesVista     = ahora.getMonth();
+  anoVista     = ahora.getFullYear();
+  diaSelec     = null;
+  horaSelec    = null;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderCalendario();
+}
+
+function cerrarModal() {
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function cerrarEnOverlay(e) {
+  if (e.target === document.getElementById('overlay')) cerrarModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(); });
+</script>
+</body>
+</html>
