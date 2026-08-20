@@ -1,0 +1,60 @@
+#causas { background: var(--light); }
+
+.causas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.75rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.causa-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 2rem 1.75rem;
+    border-top: 3px solid transparent;
+    box-shadow: 0 2px 18px rgba(0,0,0,0.05);
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.causa-card:hover {
+    border-top-color: var(--accent);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.11);
+}
+
+.causa-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--primary), #2c4a70);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.causa-icon svg {
+    width: 26px;
+    height: 26px;
+    color: var(--accent);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.causa-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.65rem;
+}
+
+.causa-desc {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.75;
+}

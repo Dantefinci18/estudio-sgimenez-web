@@ -1,0 +1,83 @@
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(13, 21, 32, 0.96);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    height: 70px;
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.35);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.nav-logo-emblem {
+    width: 38px;
+    height: 38px;
+    background: var(--accent);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--primary);
+}
+
+.nav-logo-name {
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.nav-logo-name small {
+    display: block;
+    color: var(--accent);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: color 0.25s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.nav-links .btn-cta {
+    background: var(--accent);
+    color: var(--primary) !important;
+    padding: 0.55rem 1.3rem;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: background 0.25s, transform 0.2s !important;
+}
+
+.nav-links .btn-cta:hover {
+    background: var(--accent-light);
+    transform: translateY(-1px);
+}

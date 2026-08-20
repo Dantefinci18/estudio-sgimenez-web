@@ -1,0 +1,10 @@
+footer {
+    background: var(--primary-dark);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 2.25rem 2rem;
+    font-size: 0.88rem;
+    line-height: 2;
+}
+
+footer strong { color: var(--accent); }
