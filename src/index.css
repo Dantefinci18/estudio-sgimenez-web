@@ -43,7 +43,7 @@ section { padding: 4rem 2rem; }
 }
 
 .section-desc {
-  color: var(--text-muted);
+  color: #676a8a;
   max-width: 580px;
   margin: 0 auto;
   font-size: 1rem;

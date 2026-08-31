@@ -18,9 +18,9 @@
 
 .contacto-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -28,7 +28,7 @@
     background: var(--light);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 1.75rem 1.5rem;
+    padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
     gap: 1.25rem;
@@ -89,10 +89,10 @@
 }
 
 .horarios-table {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.3rem 2rem;
-    font-size: 0.88.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: 0.88rem;
 }
 
 .horarios-table dt {

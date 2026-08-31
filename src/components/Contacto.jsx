@@ -12,7 +12,7 @@ function Contacto() {
                 </p>
             </div>
             <div className="contacto-grid">
-                <a className="contacto-card">
+                <a className="contacto-card contacto-card--horarios">
                     <div className="contacto-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                                 <circle cx="12" cy="12" r="10"/>
@@ -21,12 +21,12 @@ function Contacto() {
                         </div>
                     <div className="contacto-info">
                         <strong>Horarios de atención</strong>
-                        <dl className="horarios-table">
-                            <dt>Lunes a viernes</dt>
-                            <dd>9:00 — 18:00</dd>
-                            <dt>Sábados</dt>
-                            <dd>9:00 — 13:00</dd>
-                        </dl>
+                        <div className="horarios-table">
+                            <span>Lunes a viernes</span>
+                            <span><strong>9:00 — 18:00</strong></span>
+                            <span>Sábados</span>
+                            <span><strong>9:00 — 13:00</strong></span>
+                        </div>
                     </div>
                 </a>
                 <a className="contacto-card" href="https://wa.me/5491135637504" target="_blank" rel="noopener noreferrer">
