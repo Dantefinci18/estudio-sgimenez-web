@@ -3,8 +3,8 @@ import '../estilos/footer.css'
 function Footer(){
     return (
         <footer>
-            <p>© 2024 <strong>Estudio Jurídico Martínez &amp; Villanueva</strong>. Todos los derechos reservados.</p>
-            <p>contacto@estudiojuridico.com.ar</p>
+            <p>© {new Date().getFullYear()} <strong>Sofia Gimenez</strong> &mdash; Abogada. Todos los derechos reservados.</p>
+            <p>sgimenez.estudio@gmail.com</p>
         </footer>
     )
 }

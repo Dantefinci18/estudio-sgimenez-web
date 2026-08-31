@@ -1,13 +1,13 @@
 :root {
-  --primary:      #1a2332;
-  --primary-dark: #0d1520;
-  --accent:       #c9a84c;
-  --accent-light: #e8d5a3;
-  --light:        #f8f5ef;
-  --text:         #2c3e50;
-  --text-muted:   #6c757d;
+  --primary:      #666799;
+  --primary-dark: #4a4d72;
+  --accent:       #858AB9;
+  --accent-light: #B4C0E8;
+  --light:        #E8EBF7;
+  --text:         #3d3f5e;
+  --text-muted:   #9499C8;
   --white:        #ffffff;
-  --border:       #e0d9cc;
+  --border:       #C5CAE5;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }

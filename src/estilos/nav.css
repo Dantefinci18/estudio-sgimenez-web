@@ -2,7 +2,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(13, 21, 32, 0.96);
+    background: #666799;
     backdrop-filter: blur(12px);
     z-index: 1000;
     height: 70px;
@@ -29,23 +29,23 @@ nav {
     align-items: center;
     justify-content: center;
     font-size: 1.3rem;
-    color: var(--primary);
+    color: var(--white);
 }
 
 .nav-logo-name {
     color: var(--white);
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
 .nav-logo-name small {
     display: block;
-    color: var(--accent);
+    color: var(--text);
     font-family: 'Lato', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 300;
+    font-size: 0.70rem;
+    font-weight: 340;
     letter-spacing: 2.5px;
     text-transform: uppercase;
 }
@@ -70,7 +70,7 @@ nav {
 
 .nav-links .btn-cta {
     background: var(--accent);
-    color: var(--primary) !important;
+    color: var(--white) !important;
     padding: 0.55rem 1.3rem;
     border-radius: 4px;
     font-weight: 700;
@@ -78,6 +78,6 @@ nav {
 }
 
 .nav-links .btn-cta:hover {
-    background: var(--accent-light);
+    background: var(--primary);
     transform: translateY(-1px);
 }

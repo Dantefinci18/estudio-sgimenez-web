@@ -1,4 +1,4 @@
-#causas { background: var(--light); }
+#causas { background: #d7ddf5; }
 
 .causas-grid {
     display: grid;
@@ -26,7 +26,7 @@
 .causa-icon {
     width: 52px;
     height: 52px;
-    background: linear-gradient(135deg, var(--primary), #2c4a70);
+    background: linear-gradient(135deg, var(--primary), #9499C8);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -37,7 +37,7 @@
 .causa-icon svg {
     width: 26px;
     height: 26px;
-    color: var(--accent);
+    color: var(--white);
     fill: none;
     stroke: currentColor;
     stroke-width: 1.6;

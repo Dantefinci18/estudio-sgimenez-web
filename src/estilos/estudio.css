@@ -1,4 +1,4 @@
-#estudio { background: var(--white); }
+#estudio { background: var(--light); }
 
 .estudio-wrap { max-width: 1200px; margin: 0 auto; }
 
@@ -20,7 +20,7 @@
     display: none;
     width: 100%;
     height: 460px;
-    background: linear-gradient(135deg, var(--primary), #2c4a70);
+    background: linear-gradient(135deg, var(--primary), #9499C8);
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -46,7 +46,7 @@
     left: 0;
     right: 0;
     height: 45%;
-    background: linear-gradient(to top, rgba(13,21,32,0.72), transparent);
+    background: linear-gradient(to top, rgba(74,77,114,0.72), transparent);
     display: flex;
     align-items: flex-end;
     padding: 1.5rem 2rem;
@@ -91,8 +91,8 @@
 .valor-icon {
     width: 42px;
     height: 42px;
-    background: rgba(201,168,76,0.1);
-    border: 1px solid rgba(201,168,76,0.3);
+    background: rgba(133,138,185,0.15);
+    border: 1px solid rgba(133,138,185,0.35);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -113,4 +113,16 @@
     font-size: 0.88rem;
     color: var(--text-muted);
     line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+    .historia-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .foto-equipo,
+    .foto-fallback {
+        height: 260px;
+    }
 }

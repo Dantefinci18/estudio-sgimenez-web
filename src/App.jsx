@@ -1,4 +1,5 @@
 import Causas from "./components/Causas"
+import Contacto from "./components/Contacto"
 import Estudio from "./components/Estudio"
 import Footer from "./components/Footer"
 import Inicio from "./components/Inicio"
@@ -11,6 +12,7 @@ function App() {
       <Inicio/>
       <Causas/>
       <Estudio/>
+      <Contacto/>
       <Footer/>
     </>
   )

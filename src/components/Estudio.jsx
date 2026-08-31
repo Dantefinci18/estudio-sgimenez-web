@@ -4,76 +4,72 @@ function Estudio(){
     return(
         <section id="estudio">
             <div class="section-header">
-                <h2 class="section-title">Sobre Nosotros</h2>
+                <h2 class="section-title">Sobre Mí</h2>
                 <div class="section-rule"></div>
             </div>
 
             <div class="estudio-wrap">
                 <div class="foto-wrapper">
                 <img
-                    src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&auto=format&fit=crop&q=80"
-                    alt="Equipo del Estudio Jurídico Martínez &amp; Villanueva"
+                    src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1400&auto=format&fit=crop&q=80"
+                    alt="Dra. Sofia Gimenez — Abogada"
                     class="foto-equipo"
-                    onerror="this.style.display='none'; document.getElementById('foto-fallback').style.display='flex';"
+                    onError="this.style.display='none'; document.getElementById('foto-fallback').style.display='flex';"
                 />
                 <div id="foto-fallback" class="foto-fallback">
                     <span>⚖</span>
-                    <span>Foto del Equipo</span>
+                    <span>Sofia Gimenez</span>
                 </div>
                 <div class="foto-overlay">
                     <p class="foto-caption">
-                    Equipo del Estudio Jurídico Martínez &amp; Villanueva &mdash; Buenos Aires, Argentina
+                    Dra. Sofia Gimenez &mdash; Buenos Aires, Argentina
                     </p>
                 </div>
                 </div>
 
                 <div class="historia-grid">
                 <div class="historia-text">
-                    <h3>Nuestra Historia</h3>
+                    <h3>Mi Trayectoria</h3>
                     <p>
-                    El Estudio Jurídico fue fundado en el año 2004 por el Dr. Alejandro Martínez y la
-                    Dra. Carmen Villanueva, con la convicción de que todo ciudadano merece acceso a una
-                    defensa legal de calidad, sin importar la complejidad de su situación.
+                    Soy abogada matriculada en el Colegio Público de Abogados de la Capital Federal,
+                    con más de diez años de experiencia en el ejercicio de la profesión. Me gradué con
+                    honores en la Universidad de Buenos Aires y me especialicé en distintas ramas del
+                    derecho privado y de familia.
                     </p>
                     <p>
-                    Desde nuestros humildes comienzos con una pequeña oficina en el centro de Buenos Aires,
-                    crecimos hasta convertirnos en un estudio de referencia con un equipo de doce
-                    profesionales especializados en distintas ramas del derecho argentino e internacional.
+                    A lo largo de mi carrera acompañé a cientos de personas en situaciones complejas,
+                    brindando siempre un asesoramiento cercano, honesto y estratégico. Creo que el
+                    acceso a una buena defensa legal no debería ser un privilegio.
                     </p>
                     <p>
-                    A lo largo de más de dos décadas hemos acompañado a cientos de familias y empresas
-                    en sus momentos más difíciles, siempre guiados por el compromiso con la justicia,
-                    la ética profesional y el trato humano como pilares fundamentales de nuestra práctica.
+                    Hoy ejerzo de manera independiente, lo que me permite dedicarle a cada cliente
+                    la atención personalizada que su caso merece, sin intermediarios.
                     </p>
                 </div>
 
                 <div class="valores-list">
                     <div class="valor">
-                    <div class="valor-icon">⚖</div>
                     <div class="valor-body">
-                        <h4>Compromiso con la Justicia</h4>
-                        <p>Cada caso recibe la misma dedicación y rigor, sin importar su envergadura. Siempre buscamos el mejor resultado posible para nuestros clientes.</p>
+                        <h4>Compromiso con cada caso</h4>
+                        <p>Cada expediente recibe mi atención personal y directa. No hay casos menores: todos merecen la misma dedicación y rigor profesional.</p>
                     </div>
                     </div>
                     <div class="valor">
-                    <div class="valor-icon">🤝</div>
                     <div class="valor-body">
-                        <h4>Confianza y Transparencia</h4>
-                        <p>Mantenemos una comunicación clara y honesta, informando en todo momento sobre el estado y las perspectivas reales de cada caso.</p>
+                        <h4>Comunicación clara y honesta</h4>
+                        <p>Te informo en todo momento sobre el estado de tu situación y las perspectivas reales, sin tecnicismos innecesarios ni falsas promesas.</p>
                     </div>
                     </div>
                     <div class="valor">
-                    <div class="valor-icon">📚</div>
                     <div class="valor-body">
-                        <h4>Excelencia Profesional</h4>
-                        <p>Nuestro equipo se actualiza de forma permanente ante los cambios legislativos y jurisprudenciales para ofrecer siempre la estrategia legal más sólida.</p>
+                        <h4>Actualización permanente</h4>
+                        <p>Me mantengo al día con los cambios legislativos y jurisprudenciales para ofrecer siempre la estrategia legal más sólida y actualizada.</p>
                     </div>
                     </div>
                     <div class="valor">
-                    <div class="valor-icon">❤</div>
                     <div class="valor-body">
-                        <h4>Trato Humano</h4>
-                        <p>Sabemos que detrás de cada expediente hay personas. Por eso brindamos un trato cálido, cercano y empático en cada consulta.</p>
+                        <h4>Trato cercano y empático</h4>
+                        <p>Detrás de cada expediente hay una persona. Por eso me tomo el tiempo de escucharte y acompañarte durante todo el proceso.</p>
                     </div>
                     </div>
                 </div>

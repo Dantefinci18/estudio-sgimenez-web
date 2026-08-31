@@ -1,0 +1,115 @@
+#contacto {
+    background: var(--white);
+}
+
+.contacto-intro {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.contacto-tagline {
+    font-size: 1.1rem;
+    color: var(--text);
+    max-width: 480px;
+    margin: 0 auto;
+    font-weight: 300;
+    line-height: 1.75;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.contacto-card {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.22s, border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+    box-shadow: 0 1px 4px rgba(74,77,114,0.06);
+}
+
+.contacto-card:hover {
+    background: var(--white);
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(133,138,185,0.18);
+    transform: translateY(-3px);
+}
+
+.contacto-card--horarios {
+    grid-column: 1 / -1;
+    cursor: default;
+}
+
+.contacto-card--horarios:hover {
+    transform: none;
+    background: var(--light);
+    border-color: var(--border);
+    box-shadow: 0 1px 4px rgba(74,77,114,0.06);
+}
+
+.contacto-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(133,138,185,0.15);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contacto-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.contacto-info strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.2rem;
+}
+
+.contacto-info span {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.horarios-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem 2rem;
+    font-size: 0.88.1rem;
+}
+
+.horarios-table dt {
+    color: var(--text-muted);
+}
+
+.horarios-table dd {
+    color: var(--text);
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contacto-card--horarios {
+        grid-column: auto;
+    }
+}

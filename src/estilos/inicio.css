@@ -1,7 +1,7 @@
 #inicio {
     min-height: 100vh;
     background:
-        linear-gradient(150deg, rgba(15,23,42,0.80) 0%, rgba(26,38,57,0.72) 55%, rgba(36,51,71,0.78) 100%),
+        linear-gradient(150deg, rgba(50,52,90,0.88) 0%, rgba(74,77,114,0.82) 55%, rgba(100,102,148,0.85) 100%),
         url('/imagenes/fondo.webp') center center / cover no-repeat;
     display: flex;
     align-items: center;
@@ -17,13 +17,13 @@
     position: absolute;
     inset: 0;
     background:
-    radial-gradient(ellipse at 15% 60%, rgba(201,168,76,0.09) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 25%, rgba(201,168,76,0.06) 0%, transparent 50%);
+    radial-gradient(ellipse at 15% 60%, rgba(133,138,185,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 25%, rgba(180,192,232,0.10) 0%, transparent 50%);
 }
 
 .hero-ring {
     position: absolute;
-    border: 1px solid rgba(201,168,76,0.06);
+    border: 1px solid rgba(180,192,232,0.12);
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -31,9 +31,9 @@
     pointer-events: none;
 }
 
-.hero-ring:nth-child(1) { width: 380px; height: 380px; border-color: rgba(201,168,76,0.08); }
+.hero-ring:nth-child(1) { width: 380px; height: 380px; border-color: rgba(180,192,232,0.20); }
 .hero-ring:nth-child(2) { width: 620px; height: 620px; }
-.hero-ring:nth-child(3) { width: 860px; height: 860px; border-color: rgba(201,168,76,0.03); }
+.hero-ring:nth-child(3) { width: 860px; height: 860px; border-color: rgba(180,192,232,0.06); }
 
 .hero-content {
     position: relative;
@@ -43,8 +43,8 @@
 
 .hero-badge {
     display: inline-block;
-    background: rgba(201,168,76,0.13);
-    border: 1px solid rgba(201,168,76,0.45);
+    background: rgba(133,138,185,0.18);
+    border: 1px solid rgba(133,138,185,0.55);
     color: var(--accent);
     font-size: 0.72rem;
     letter-spacing: 3px;
@@ -88,7 +88,7 @@
     align-items: center;
     gap: 0.65rem;
     background: var(--accent);
-    color: var(--primary);
+    color: var(--white);
     border: none;
     text-decoration: none;
     padding: 1rem 2.75rem;
@@ -100,13 +100,13 @@
     cursor: pointer;
     border-radius: 4px;
     transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
-    box-shadow: 0 6px 24px rgba(201,168,76,0.45);
+    box-shadow: 0 6px 24px rgba(133,138,185,0.45);
 }
 
 .btn-reservar:hover {
-    background: var(--accent-light);
+    background: var(--primary);
     transform: translateY(-3px);
-    box-shadow: 0 10px 36px rgba(201,168,76,0.55);
+    box-shadow: 0 10px 36px rgba(133,138,185,0.55);
 }
 
 .btn-reservar svg { width: 18px; height: 18px; flex-shrink: 0; }
@@ -125,5 +125,17 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    #inicio {
+        background:
+            linear-gradient(140deg, rgba(50,52,90,0.88) 0%, rgba(74,77,114,0.82) 55%, rgba(100,102,148,0.85) 100%),
+            url('/imagenes/fondo.webp') 94% center / cover no-repeat;
+    }
+
+    .hero-stats {
+        gap: 2rem;
+    }
 }
 

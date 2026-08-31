@@ -7,8 +7,8 @@ function Causas(){
                 <h2 class="section-title">Áreas de Práctica</h2>
                 <div class="section-rule"></div>
                 <p class="section-desc">
-                Contamos con profesionales especializados en distintas ramas del derecho
-                para brindarle la mejor representación.
+                Brindo asesoramiento y representación en distintas ramas del derecho,
+                con enfoque personalizado en cada situación.
                 </p>
             </div>
 
