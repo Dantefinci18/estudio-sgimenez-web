@@ -5,6 +5,7 @@ import Footer from "./components/Footer"
 import Inicio from "./components/Inicio"
 import Nav from "./components/Nav"
 import Opiniones from "./components/Opiniones"
+import Proceso from "./components/Proceso"
 import WhatsAppButton from "./components/WhatsAppButton"
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Inicio/>
       <Causas/>
       <Estudio/>
+      <Proceso/>
       <Opiniones/>
       <Contacto/>
       <Footer/>
