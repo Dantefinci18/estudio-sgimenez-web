@@ -4,6 +4,7 @@ import Estudio from "./components/Estudio"
 import Footer from "./components/Footer"
 import Inicio from "./components/Inicio"
 import Nav from "./components/Nav"
+import WhatsAppButton from "./components/WhatsAppButton"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Estudio/>
       <Contacto/>
       <Footer/>
+      <WhatsAppButton/>
     </>
   )
 }
