@@ -25,7 +25,25 @@ function InicioDesktop(){
                     <line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>
                 Reservar Turno
-            </a>
+                </a>
+                <div className="hero-stats">
+                    <div>
+                        <div className="stat-number">+20</div>
+                        <div className="stat-label">Años de experiencia</div>
+                        <div className="stat-number">+10</div>
+                        <div className="stat-label">Años de trayectoria</div>
+                    </div>
+                    <div>
+                        <div className="stat-number">+300</div>
+                        <div className="stat-label">Casos resueltos</div>
+                    </div>
+                    <div>
+                        <div className="stat-number">98%</div>
+                        <div className="stat-label">Satisfacción</div>
+                        <div className="stat-number">100%</div>
+                        <div className="stat-label">Dedicación</div>
+                    </div>
+                </div>
             </div>
             <div className="hero-image">
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1600&q=85" alt="Sofía Giménez" />

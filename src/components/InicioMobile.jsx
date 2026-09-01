@@ -31,6 +31,24 @@ function InicioMobile(){
                     </svg>
                     Reservar Turno
                 </a>
+                <div className="hero-stats">
+                    <div>
+                        <div className="stat-number">+20</div>
+                        <div className="stat-label">Años de experiencia</div>
+                        <div className="stat-number">+10</div>
+                        <div className="stat-label">Años de trayectoria</div>
+                    </div>
+                    <div>
+                        <div className="stat-number">+300</div>
+                        <div className="stat-label">Casos resueltos</div>
+                    </div>
+                    <div>
+                        <div className="stat-number">98%</div>
+                        <div className="stat-label">Satisfacción</div>
+                        <div className="stat-number">100%</div>
+                        <div className="stat-label">Dedicación</div>
+                    </div>
+                </div>
             </div>
         </div>
     )
